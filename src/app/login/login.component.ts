@@ -18,6 +18,7 @@ export class LoginComponent {
     this.ShowLoadig=true
     this.api.login(this.email,this.pass).subscribe({
       next: respuesta => {
+        localStorage.setItem("correo", this.email);
         this.router.navigate(['/home'])
       },
       error: respuesta => {
